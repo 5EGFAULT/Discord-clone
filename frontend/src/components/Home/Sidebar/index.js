@@ -35,6 +35,8 @@ const ServerTopTitle = styled.div`
 const GroupsContainer = styled.div`
   width: 272px;
   flex: 1;
+  overflow-y: auto;
+
   /* background-color: red; */
 `;
 function Sidebar(props) {

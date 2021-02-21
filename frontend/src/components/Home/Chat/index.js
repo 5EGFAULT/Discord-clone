@@ -1,8 +1,14 @@
 import styled from "styled-components";
 import hashtag from "../../../Icons/hashtag.svg";
 import ChatTextFeild from "./ChatTextFeild";
-import ChatBody from "./ChatBody";
-
+import Message from "./Message";
+import avatar from "../../../Icons/lol.png";
+import img from "../../../Icons/server.svg";
+import img2 from "../../../Icons/img.png";
+const ChatBody = styled.div`
+  flex: 1;
+  overflow-y: auto;
+`;
 const Container = styled.div`
   flex: 1;
   background-color: #37393f;
@@ -10,8 +16,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  padding-left: 16px;
-  padding-right: 16px;
 `;
 const ChannelTopTitle = styled.div`
   width: 100%;
@@ -41,7 +45,12 @@ function Chat() {
         <img src={hashtag} />
         channel1
       </ChannelTopTitle>
-      <ChatBody></ChatBody>
+      <ChatBody>
+        <Message avatar={avatar}>Message1</Message>
+        <Message avatar={img}>Message2</Message>
+        <Message avatar={avatar}>Message3</Message>
+        <Message avatar={img2}>Message4</Message>
+      </ChatBody>
       <ChatTextFeild></ChatTextFeild>
     </Container>
   );

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import hashtag from "../../../../Icons/hashtag.svg";
 
 const Container = styled.div`
+  cursor: default;
   height: 34px;
   width: 252px;
   background-color: ${(props) =>
