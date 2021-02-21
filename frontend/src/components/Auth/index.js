@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import Login from "../Login";
+import Login from "./Login";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import background from "../../Icons/Background.jpg";
-import Register from "../Register";
+import Register from "./Register";
 
 const Background = styled.div`
   width: 100vw;
