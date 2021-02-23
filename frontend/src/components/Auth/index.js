@@ -23,10 +23,7 @@ function Auth() {
   return (
     <Background>
       <Container>
-        <Router>
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/register" component={Register}></Route>
-        </Router>
+        <Router></Router>
       </Container>
     </Background>
   );

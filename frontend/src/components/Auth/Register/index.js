@@ -5,6 +5,8 @@ import DateSelector from "../AuthComponents/DateSelector";
 import { Provider } from "react-redux";
 import RegisterStore from "./RegisterStore";
 import axios from "axios";
+import background from "../../../Icons/Background.jpg";
+
 const RegisterForm = styled.div`
   height: 100%;
   width: 416px;
@@ -19,48 +21,71 @@ const Container = styled.div`
   margin-top: 20px;
 `;
 
+const Background = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-image: url("${background}");
+`;
+const BodyContainer = styled.div`
+  width: 100vw;
+  max-width: 1480px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+`;
+
 function Register() {
   // console.log("Initial state: ", store);
   return (
     <Provider store={RegisterStore}>
-      <AuthForm width="416px" height="506px">
-        <RegisterForm>
-          <Headline>Create an account</Headline>
-          <Container>
-            <AuthTextFeild
-              name="EMAIL"
-              store={RegisterStore}
-              marginBottom="20px"
-            >
-              Email
-            </AuthTextFeild>
-            <AuthTextFeild
-              name="USERNAME"
-              store={RegisterStore}
-              marginBottom="20px"
-            >
-              Username
-            </AuthTextFeild>
-            <AuthTextFeild
-              name="PASSWORD"
-              store={RegisterStore}
-              type="password"
-              marginBottom="20px"
-            >
-              Password
-            </AuthTextFeild>
-            <DateSelector name="DOB" store={RegisterStore}>
-              Date of birth
-            </DateSelector>
-            <Button margintop="20px" marginbottom="6px" onClick={RegisterAPI}>
-              Register
-              {/* Continue */}
-            </Button>
+      <Background>
+        <BodyContainer>
+          <AuthForm width="416px" height="506px">
+            <RegisterForm>
+              <Headline>Create an account</Headline>
+              <Container>
+                <AuthTextFeild
+                  name="EMAIL"
+                  store={RegisterStore}
+                  marginBottom="20px"
+                >
+                  Email
+                </AuthTextFeild>
+                <AuthTextFeild
+                  name="USERNAME"
+                  store={RegisterStore}
+                  marginBottom="20px"
+                >
+                  Username
+                </AuthTextFeild>
+                <AuthTextFeild
+                  name="PASSWORD"
+                  store={RegisterStore}
+                  type="password"
+                  marginBottom="20px"
+                >
+                  Password
+                </AuthTextFeild>
+                <DateSelector name="DOB" store={RegisterStore}>
+                  Date of birth
+                </DateSelector>
+                <Button
+                  margintop="20px"
+                  marginbottom="6px"
+                  onClick={RegisterAPI}
+                >
+                  Register
+                  {/* Continue */}
+                </Button>
 
-            <Link href="/login">Already have an account?</Link>
-          </Container>
-        </RegisterForm>
-      </AuthForm>
+                <Link to="/login">Already have an account?</Link>
+              </Container>
+            </RegisterForm>
+          </AuthForm>
+        </BodyContainer>
+      </Background>
     </Provider>
   );
 }

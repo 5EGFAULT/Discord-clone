@@ -16,10 +16,10 @@ const Container = styled.div`
 function Listbar() {
   return (
     <Container>
-      <ListItem img={img}></ListItem>
-      <ListItem img={img2}></ListItem>
-      <ListItem img={img}></ListItem>
-      <ListItem img={lol}></ListItem>
+      <ListItem servername={"server1"} img={img}></ListItem>
+      <ListItem servername={"server2"} img={img2}></ListItem>
+      <ListItem servername={"server3"} img={img}></ListItem>
+      <ListItem servername={"server4"} img={lol}></ListItem>
     </Container>
   );
 }

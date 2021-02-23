@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { Link as LinkRouter } from "react-router-dom";
 const AuthForm = styled.form`
   box-sizing: content-box;
   /* width: ${(props) => props.width}; */
@@ -38,7 +38,7 @@ const SubHeadline = styled.div`
   line-height: 20px;
   font-family: "Whitney Book Regular";
 `;
-const Link = styled.a`
+const Link = styled(LinkRouter)`
   display: block;
   text-decoration: none;
   margin-bottom: 20px;

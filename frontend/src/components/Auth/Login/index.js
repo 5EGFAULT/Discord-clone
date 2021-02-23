@@ -10,6 +10,23 @@ import {
 import AuthTextFeild from "../AuthComponents/AuthTextFeild";
 import { Provider } from "react-redux";
 import LoginStore from "./LoginStore";
+import background from "../../../Icons/Background.jpg";
+
+const Background = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-image: url("${background}");
+`;
+const BodyContainer = styled.div`
+  width: 100vw;
+  max-width: 1480px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+`;
+
 const LoginForm = styled.div`
   height: 100%;
   width: 414px;
@@ -40,36 +57,44 @@ const Container = styled.div`
 function Login() {
   return (
     <Provider store={LoginStore}>
-      <AuthForm width="720px" height="344px">
-        <LoginForm>
-          <Headline>Welcome back!</Headline>
-          <SubHeadline>We're so excited to see you again!</SubHeadline>
-          <Container>
-            <AuthTextFeild
-              marginBottom="20px"
-              type="text"
-              // type="email"
-              name="EMAIL"
-              store={LoginStore}
-            >
-              Email
-              {/* or Phone Number */}
-            </AuthTextFeild>
-            <AuthTextFeild type="password" name="PASSWORD" store={LoginStore}>
-              Password
-            </AuthTextFeild>
-            <Link>Forgot your password?</Link>
-            <Button marginbottom="8px" onClick={LoginAPI}>
-              Login
-            </Button>
-            <InfoSpan>
-              Need an account? <Link href="/register"> Register</Link>
-            </InfoSpan>
-          </Container>
-        </LoginForm>
-        <Separateur />
-        <QrDiv></QrDiv>
-      </AuthForm>
+      <Background>
+        <BodyContainer>
+          <AuthForm width="720px" height="344px">
+            <LoginForm>
+              <Headline>Welcome back!</Headline>
+              <SubHeadline>We're so excited to see you again!</SubHeadline>
+              <Container>
+                <AuthTextFeild
+                  marginBottom="20px"
+                  type="text"
+                  // type="email"
+                  name="EMAIL"
+                  store={LoginStore}
+                >
+                  Email
+                  {/* or Phone Number */}
+                </AuthTextFeild>
+                <AuthTextFeild
+                  type="password"
+                  name="PASSWORD"
+                  store={LoginStore}
+                >
+                  Password
+                </AuthTextFeild>
+                <Link to="/reset-password">Forgot your password?</Link>
+                <Button marginbottom="8px" onClick={LoginAPI}>
+                  Login
+                </Button>
+                <InfoSpan>
+                  Need an account? <Link to="/register"> Register</Link>
+                </InfoSpan>
+              </Container>
+            </LoginForm>
+            <Separateur />
+            <QrDiv></QrDiv>
+          </AuthForm>
+        </BodyContainer>
+      </Background>
     </Provider>
   );
 }

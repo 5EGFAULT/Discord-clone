@@ -31,6 +31,10 @@ const GroupTitle = styled.div`
     flex: 1;
     text-transform: uppercase;
     color: #8e9297;
+    cursor: default;
+  }
+  &:hover div {
+    color: #fff;
   }
 `;
 function Group({ children, title }) {
@@ -45,8 +49,8 @@ function Group({ children, title }) {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M8.295 4L6 6.2869L3.705 4L3 4.70403L6 7.7L9 4.70403L8.295 4Z"
             fill="#8E9297"
           />

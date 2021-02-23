@@ -22,6 +22,10 @@ const Container = styled.div`
     /* color: #8e9297; */
     color: ${(props) => (props.isSelected ? "#fff" : "#8e9297")};
   }
+
+  &:hover {
+    background-color: #20222599;
+  }
 `;
 
 function ListItemChanel({ isSelected, children }) {
