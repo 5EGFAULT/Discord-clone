@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import hashtag from "../../../Icons/hashtag.svg";
-import ChatTextFeild from "./ChatTextFeild";
-import Message from "./Message";
-import avatar from "../../../Icons/lol.png";
-import img from "../../../Icons/server.svg";
-import img2 from "../../../Icons/img.png";
+import hashtag from "../../Icons/hashtag.svg";
+import ChatTextFeild from "../../components/ChatTextFeild";
+import Message from "../../components/Message";
+import avatar from "../../Icons/lol.png";
+import img from "../../Icons/server.svg";
+import img2 from "../../Icons/img.png";
 const ChatBody = styled.div`
   flex: 1;
   overflow-y: auto;

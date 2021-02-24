@@ -1,11 +1,16 @@
 import styled from "styled-components";
-import { AuthForm, Headline, Link, Button } from "../AuthComponents";
-import AuthTextFeild from "../AuthComponents/AuthTextFeild";
-import DateSelector from "../AuthComponents/DateSelector";
+import {
+  AuthForm,
+  Headline,
+  Link,
+  Button,
+} from "../../components/AuthComponents/index";
+import AuthTextFeild from "../../components/AuthComponents/AuthTextFeild";
+import DateSelector from "../../components/AuthComponents/DateSelector";
 import { Provider } from "react-redux";
 import RegisterStore from "./RegisterStore";
 import axios from "axios";
-import background from "../../../Icons/Background.jpg";
+import background from "../../Icons/Background.jpg";
 
 const RegisterForm = styled.div`
   height: 100%;

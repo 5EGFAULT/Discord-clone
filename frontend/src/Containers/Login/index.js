@@ -6,11 +6,11 @@ import {
   Link,
   Button,
   InfoSpan,
-} from "../AuthComponents";
-import AuthTextFeild from "../AuthComponents/AuthTextFeild";
+} from "../../components/AuthComponents/index";
+import AuthTextFeild from "../../components/AuthComponents/AuthTextFeild";
 import { Provider } from "react-redux";
 import LoginStore from "./LoginStore";
-import background from "../../../Icons/Background.jpg";
+import background from "../../Icons/Background.jpg";
 
 const Background = styled.div`
   width: 100vw;

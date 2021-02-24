@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import arrow from "../../../Icons/arrow.svg";
-import Arrow from "../../../Icons/Arrow";
-import Group from "./Group";
-import ListItemChanel from "./ListItemChanel";
-import UserPanel from "./UserPanel";
+import arrow from "../../Icons/arrow.svg";
+import Group from "../Group";
+import ListItemChanel from "../ListItemChanel";
+import UserPanel from "../UserPanel";
 
 const Container = styled.div`
   width: 272px;
@@ -48,11 +47,15 @@ function Sidebar(props) {
         {/* <Arrow width="18px" height="18px" color="white" /> */}
       </ServerTopTitle>
       <GroupsContainer>
-        <Group title="Title">
-          <ListItemChanel>channel1</ListItemChanel>
-          <ListItemChanel isSelected={true}>channel2</ListItemChanel>
-          <ListItemChanel>channel3</ListItemChanel>
-        </Group>
+        <Group
+          title="Title"
+          channels={[
+            { name: "channel1", url: "/channel1" },
+            { name: "channel2", url: "/channel2" },
+            { name: "channel3", url: "/channel3" },
+          ]}
+        ></Group>
+        {/* <ListItemChanel channel={{ name: "channel5", url: "/channel5" }} /> */}
       </GroupsContainer>
       <UserPanel></UserPanel>
     </Container>

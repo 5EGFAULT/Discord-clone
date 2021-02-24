@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import ListItem from "./ListItem";
-import img from "../../../Icons/server.svg";
-import img2 from "../../../Icons/img.png";
-import lol from "../../../Icons/lol.png";
+import ListItem from "../ListItem";
+import img from "../../Icons/server.svg";
+import img2 from "../../Icons/img.png";
+import lol from "../../Icons/lol.png";
 const Container = styled.div`
   width: 72px;
   background-color: #202225;

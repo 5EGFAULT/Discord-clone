@@ -1,5 +1,10 @@
 import styled from "styled-components";
-import hashtag from "../../../../Icons/hashtag.svg";
+import hashtag from "../../Icons/hashtag.svg";
+import { Link } from "react-router-dom";
+
+const Styledlink = styled(Link)`
+  text-decoration: none;
+`;
 
 const Container = styled.div`
   cursor: default;
@@ -16,6 +21,7 @@ const Container = styled.div`
     margin-right: 6px;
   }
   & div {
+    text-decoration: none;
     font-family: "Whitney Medium Regular";
     font-size: 16px;
     line-height: 20px;
@@ -27,13 +33,15 @@ const Container = styled.div`
     background-color: #20222599;
   }
 `;
-
-function ListItemChanel({ isSelected, children }) {
+// use redux state to get the selected chanel set isselected
+function ListItemChanel({ channel }) {
   return (
-    <Container isSelected={isSelected}>
-      <img src={hashtag} />
-      <div>{children}</div>
-    </Container>
+    <Styledlink to={channel.url}>
+      <Container isSelected={false}>
+        <img src={hashtag} />
+        <div>{channel.name}</div>
+      </Container>
+    </Styledlink>
   );
 }
 
