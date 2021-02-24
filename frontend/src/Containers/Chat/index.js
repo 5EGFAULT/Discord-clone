@@ -50,6 +50,34 @@ function Chat() {
         <Message avatar={img}>Message2</Message>
         <Message avatar={avatar}>Message3</Message>
         <Message avatar={img2}>Message4</Message>
+        <Message avatar={avatar}>Message1</Message>
+        <Message avatar={img}>Message2</Message>
+        <Message avatar={avatar}>Message3</Message>
+        <Message avatar={img2}>Message4</Message>
+        <Message avatar={avatar}>Message1</Message>
+        <Message avatar={img}>Message2</Message>
+        <Message avatar={avatar}>Message3</Message>
+        <Message avatar={img2}>Message4</Message>
+        <Message avatar={avatar}>Message1</Message>
+        <Message avatar={img}>Message2</Message>
+        <Message avatar={avatar}>Message3</Message>
+        <Message avatar={img2}>Message4</Message>
+        <Message avatar={avatar}>Message1</Message>
+        <Message avatar={img}>Message2</Message>
+        <Message avatar={avatar}>Message3</Message>
+        <Message avatar={img2}>Message4</Message>
+        <Message avatar={avatar}>Message1</Message>
+        <Message avatar={img}>Message2</Message>
+        <Message avatar={avatar}>Message3</Message>
+        <Message avatar={img2}>Message4</Message>
+        <Message avatar={avatar}>Message1</Message>
+        <Message avatar={img}>Message2</Message>
+        <Message avatar={avatar}>Message3</Message>
+        <Message avatar={img2}>Message4</Message>
+        <Message avatar={avatar}>Message1</Message>
+        <Message avatar={img}>Message2</Message>
+        <Message avatar={avatar}>Message3</Message>
+        <Message avatar={img2}>Message4</Message>
       </ChatBody>
       <ChatTextFeild></ChatTextFeild>
     </Container>

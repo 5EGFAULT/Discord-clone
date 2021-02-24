@@ -43,12 +43,7 @@ function AuthTextFeild(props) {
       <Label>{props.children}</Label>
       <InputWrap>
         <Input
-          onChange={(e) => {
-            props.store.dispatch({
-              type: "CHANGE_" + props.name,
-              payload: e.target.value,
-            });
-          }}
+          onChange={(e) => props.changehandler(e.target.value)}
           type={props.type}
         ></Input>
       </InputWrap>

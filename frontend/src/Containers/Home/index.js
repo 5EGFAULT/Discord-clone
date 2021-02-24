@@ -11,7 +11,7 @@ const Container = styled.div`
   flex-wrap: nowrap;
 `;
 
-function Home() {
+function ChannelRoom() {
   return (
     <Container>
       <Listbar></Listbar>
@@ -21,4 +21,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default ChannelRoom;

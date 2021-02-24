@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 // import serverimg from "../../../../Icons/server.svg";
 const Container = styled.div`
   position: relative;
@@ -51,18 +52,20 @@ const Tooltip = styled.div`
     transform: rotate(45deg);
   }
 `;
-function ListItem({ img, servername }) {
+function ListItem({ img, servername, id }) {
   const [isshowed, setisshowed] = useState(false);
   return (
-    <Container>
-      <Avatar
-        onMouseEnter={(e) => setisshowed(true)}
-        onMouseLeave={(e) => setisshowed(false)}
-      >
-        <img src={img} />
-      </Avatar>
-      <Tooltip isshowed={isshowed}>{servername}</Tooltip>
-    </Container>
+    <Link to={"/server/" + id}>
+      <Container>
+        <Avatar
+          onMouseEnter={(e) => setisshowed(true)}
+          onMouseLeave={(e) => setisshowed(false)}
+        >
+          <img src={img} />
+        </Avatar>
+        <Tooltip isshowed={isshowed}>{servername}</Tooltip>
+      </Container>
+    </Link>
   );
 }
 export default ListItem;

@@ -50,9 +50,9 @@ function Sidebar(props) {
         <Group
           title="Title"
           channels={[
-            { name: "channel1", url: "/channel1" },
-            { name: "channel2", url: "/channel2" },
-            { name: "channel3", url: "/channel3" },
+            { name: "channel1", url: "/channel/1" },
+            { name: "channel2", url: "/channel/2" },
+            { name: "channel3", url: "/channel/3" },
           ]}
         ></Group>
         {/* <ListItemChanel channel={{ name: "channel5", url: "/channel5" }} /> */}

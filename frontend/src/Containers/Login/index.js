@@ -8,9 +8,14 @@ import {
   InfoSpan,
 } from "../../components/AuthComponents/index";
 import AuthTextFeild from "../../components/AuthComponents/AuthTextFeild";
-import { Provider } from "react-redux";
-import LoginStore from "./LoginStore";
 import background from "../../Icons/Background.jpg";
+import {
+  changeEmail,
+  changePassword,
+  selectEmail,
+  selectPassword,
+} from "./loginSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 const Background = styled.div`
   width: 100vw;
@@ -55,53 +60,57 @@ const Container = styled.div`
 `;
 
 function Login() {
+  const dispatch = useDispatch();
+  const email = useSelector(selectEmail);
+  const password = useSelector(selectPassword);
   return (
-    <Provider store={LoginStore}>
-      <Background>
-        <BodyContainer>
-          <AuthForm width="720px" height="344px">
-            <LoginForm>
-              <Headline>Welcome back!</Headline>
-              <SubHeadline>We're so excited to see you again!</SubHeadline>
-              <Container>
-                <AuthTextFeild
-                  marginBottom="20px"
-                  type="text"
-                  // type="email"
-                  name="EMAIL"
-                  store={LoginStore}
-                >
-                  Email
-                  {/* or Phone Number */}
-                </AuthTextFeild>
-                <AuthTextFeild
-                  type="password"
-                  name="PASSWORD"
-                  store={LoginStore}
-                >
-                  Password
-                </AuthTextFeild>
-                <Link to="/reset-password">Forgot your password?</Link>
-                <Button marginbottom="8px" onClick={LoginAPI}>
-                  Login
-                </Button>
-                <InfoSpan>
-                  Need an account? <Link to="/register"> Register</Link>
-                </InfoSpan>
-              </Container>
-            </LoginForm>
-            <Separateur />
-            <QrDiv></QrDiv>
-          </AuthForm>
-        </BodyContainer>
-      </Background>
-    </Provider>
+    <Background>
+      <BodyContainer>
+        <AuthForm width="720px" height="344px">
+          <LoginForm>
+            <Headline>Welcome back!</Headline>
+            <SubHeadline>We're so excited to see you again!</SubHeadline>
+            <Container>
+              <AuthTextFeild
+                marginBottom="20px"
+                type="text"
+                // type="email"
+                changehandler={(value) => dispatch(changeEmail(value))}
+              >
+                Email
+                {/* or Phone Number */}
+              </AuthTextFeild>
+              <AuthTextFeild
+                type="password"
+                changehandler={(value) => dispatch(changePassword(value))}
+              >
+                Password
+              </AuthTextFeild>
+              <Link to="/reset-password">Forgot your password?</Link>
+              <Button
+                marginbottom="8px"
+                onClick={() => LoginAPI(email, password)}
+              >
+                Login
+              </Button>
+              <InfoSpan>
+                Need an account? <Link to="/register"> Register</Link>
+              </InfoSpan>
+            </Container>
+          </LoginForm>
+          <Separateur />
+          <QrDiv></QrDiv>
+        </AuthForm>
+      </BodyContainer>
+    </Background>
   );
 }
-function LoginAPI() {
-  const email = LoginStore.getState().email;
-  const password = LoginStore.getState().password;
+function LoginAPI(email, password) {
+  // const email = useSelector(selectEmail);
+  // const password = useSelector(selectPassword);
 
+  // const email = LoginStore.getState().email;
+  // const password = LoginStore.getState().password;
   console.log(email, password);
 }
 export default Login;

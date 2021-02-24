@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "Whitney Book Regular";
+  src: url("fonts/book.woff") format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Whitney Medium Regular";
+  src: url("fonts/Meduim\ regular.woff") format("woff");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Whitney Semibold Regular";
+  src: url("fonts/semiBold.woff") format("woff");
+  font-weight: 600;
+}
+
+body {
+  margin: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+  font-family: "Whitney Book Regular";
+  background-color: #f5f6f9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+/* 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */

@@ -38,27 +38,21 @@ function DateSelector(props) {
       <Label>{props.children}</Label>
       <Container>
         <Selector
-          select="month"
-          store={props.store}
-          name={props.name + "_MONTH"}
+          changehandler={props.changeMonthhandler}
           list={months}
           width="154"
         >
           Month
         </Selector>
         <Selector
-          select="day"
-          store={props.store}
-          name={props.name + "_DAY"}
+          changehandler={props.changeDayhandler}
           list={range(1, 31)}
           width="100"
         >
           Day
         </Selector>
         <Selector
-          select="year"
-          store={props.store}
-          name={props.name + "_YEAR"}
+          changehandler={props.changeYearhandler}
           list={range(1869, 2018).reverse()}
           width="120"
         >
@@ -210,10 +204,8 @@ function Selector(props) {
               //   "dddddddddddddd",
               //   props.store.getState().dob[`${props.select}`]
               // );
-              props.store.dispatch({
-                type: "CHANGE_" + props.name,
-                payload: option,
-              });
+              props.changehandler(option);
+
               Inputref.current.value = option;
               OptionListref.current.style.display = "none";
             }}
