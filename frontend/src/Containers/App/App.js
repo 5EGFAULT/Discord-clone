@@ -8,12 +8,12 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/register" component={Register}></Route>
+      <Route path="/login" component={Login} />
+      <Route path="/register" component={Register}></Route>
       <Route path="/channel/:id" component={ChannelRoom} />
       <Route path="/server/:id" component={ServerListPage} />
       {/* chanell list without chat lisr*/}
-      {/* <Route path="/" component={ChannelRoom} /> */}
+      <Route exact path="/" component={Home} />
       {/* server list without chat lisr*/}
       {/* <Route path="/" component={Home} /> */}
     </Router>

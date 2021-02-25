@@ -1,4 +1,9 @@
 import styled from "styled-components";
+import axios from "axios";
+import * as yup from "yup";
+// import passwordyup from "yup-password";
+// passwordyup(yup);
+// console.log(passwordyup);
 import {
   AuthForm,
   Headline,
@@ -14,7 +19,7 @@ import {
   changePassword,
   selectEmail,
   selectPassword,
-} from "./loginSlice";
+} from "../../Features/loginSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 const Background = styled.div`
@@ -86,7 +91,7 @@ function Login() {
               >
                 Password
               </AuthTextFeild>
-              <Link to="/reset-password">Forgot your password?</Link>
+              <Link to="/reset-password">{/* Forgot your password? */}</Link>
               <Button
                 marginbottom="8px"
                 onClick={() => LoginAPI(email, password)}
@@ -105,12 +110,51 @@ function Login() {
     </Background>
   );
 }
-function LoginAPI(email, password) {
-  // const email = useSelector(selectEmail);
-  // const password = useSelector(selectPassword);
-
-  // const email = LoginStore.getState().email;
-  // const password = LoginStore.getState().password;
-  console.log(email, password);
+let schema = yup.object().shape({
+  email: yup.string().email().required("No email provided."),
+  password: yup
+    .string()
+    .required("No password provided.")
+    .matches(
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&_-])[A-Za-z\d@$!%*#?&_-]{8,}$/,
+      "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
+    ),
+});
+async function LoginAPI(email, password) {
+  try {
+    const res = await schema.validate(
+      { email: email, password: password },
+      { abortEarly: false }
+    );
+    console.log(res);
+    let data = JSON.stringify({
+      email: email,
+      password: password,
+    });
+    const config = {
+      method: "POST",
+      url: "http://localhost:3003/login",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: data,
+    };
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  } catch (err) {
+    const errors = [];
+    err.inner.forEach((e) =>
+      errors.push({
+        name: e.path,
+        msg: e.message,
+      })
+    );
+    console.log(errors);
+  }
 }
 export default Login;

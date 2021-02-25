@@ -22,7 +22,7 @@ import {
   selectMonth,
   selectUsername,
   selectYear,
-} from "./registerSlice";
+} from "../../Features/registerSlice";
 import axios from "axios";
 import background from "../../Icons/Background.jpg";
 
@@ -117,67 +117,33 @@ function Register() {
 }
 
 function RegisterAPI(email, username, password, day, month, year) {
-  console.log(email, username, password, day, month, year);
-  // const username = RegisterStore.getState().username;
-  // const email = RegisterStore.getState().email;
-  // const password = RegisterStore.getState().password;
-  // const date_of_birth2 = new Date(
-  //   Date.parse(
-  //     RegisterStore.getState().dob.month +
-  //       " " +
-  //       RegisterStore.getState().dob.day +
-  //       ", " +
-  //       RegisterStore.getState().dob.year
-  //   )
-  // );
-  // const date_of_birth =
-  //   RegisterStore.getState().dob.day +
-  //   "-" +
-  //   RegisterStore.getState().dob.month +
-  //   "-" +
-  //   RegisterStore.getState().dob.year;
-  // // console.log(username, email, password, date_of_birth);
-  // let data = JSON.stringify({
-  //   email: email,
-  //   password: password,
-  //   username: username,
-  //   date_of_birth: date_of_birth,
-  // });
-  // var config = {
-  //   method: "POST",
-  // url: "http://localhost:3003/register",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   data: data,
-  // };
-  // console.log(data);
-  // axios(config)
-  //   .then(function (response) {
-  //     console.log(JSON.stringify(response.data));
-  //   })
-  //   .catch(function (error) {
-  //     console.log(error);
-  //   });
-  // var myHeaders = new Headers();
-  // myHeaders.append("Content-Type", "application/json");
-  // var raw = JSON.stringify({
-  //   email: "dsbsdb",
-  //   password: "fdsfsdf",
-  //   username: "sddbdsbsb",
-  //   date_of_birth: "01-12-2000",
-  // });
-  // // var requestOptions = {
-  // //   method: "POST",
-  // //   headers: myHeaders,
-  // //   body: raw,
-  // //   redirect: "follow",
-  // // };
-  // // fetch("https://localhost:3003/register", requestOptions)
-  // //   .then((response) => response.text())
-  // //   .then((result) => console.log(result))
-  // //   .catch((error) => console.log("error", error));
-  // console.log(date_of_birth2);
+  //! date validator
+  // const date = new Date(1999, 1, 30);
+  //
+  // const isValidDate = (Boolean(+date) && date.getDate() == 30);
+
+  const date_of_birth = new Date(Date.parse(month + " " + day + ", " + year));
+  let data = JSON.stringify({
+    email: email,
+    password: password,
+    username: username,
+    date_of_birth: date_of_birth,
+  });
+  const config = {
+    method: "POST",
+    url: "http://localhost:3003/register",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data: data,
+  };
+  axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 }
 
 export default Register;

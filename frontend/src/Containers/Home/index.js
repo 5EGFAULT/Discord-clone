@@ -1,8 +1,5 @@
 import styled from "styled-components";
-import { BrowserRouter as Router, Route } from "react-router-dom";
 import Listbar from "../../components/Listbar";
-import Sidebar from "../../components/Sidebar";
-import Chat from "../Chat";
 
 const Container = styled.div`
   width: 100vw;
@@ -10,15 +7,17 @@ const Container = styled.div`
   display: flex;
   flex-wrap: nowrap;
 `;
-
-function ChannelRoom() {
+const Body = styled.div`
+  flex: 1;
+  background-color: #37393f;
+`;
+function Home() {
   return (
     <Container>
       <Listbar></Listbar>
-      <Sidebar server_name="Server Title"></Sidebar>
-      <Chat></Chat>
+      <Body></Body>
     </Container>
   );
 }
 
-export default ChannelRoom;
+export default Home;
