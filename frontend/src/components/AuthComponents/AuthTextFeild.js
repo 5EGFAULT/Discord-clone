@@ -38,11 +38,18 @@ const InputWrap = styled.div`
   }
 `;
 function AuthTextFeild(props) {
+  const style = props.width
+    ? { marginBottom: props.marginBottom, width: props.width }
+    : { marginBottom: props.marginBottom };
+
   return (
-    <div style={{ marginBottom: props.marginBottom }}>
-      <Label>{props.children}</Label>
+    <div style={style}>
+      <Label style={{ color: props.width ? "white" : "#8e9297" }}>
+        {props.children}
+      </Label>
       <InputWrap>
         <Input
+          style={{ color: props.width ? "white" : "#8e9297" }}
           onChange={(e) => props.changehandler(e.target.value)}
           type={props.type}
         ></Input>

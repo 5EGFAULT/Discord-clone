@@ -1,9 +1,15 @@
 import styled from "styled-components";
 import ListItem from "../ListItem";
+import ActionServerListitem from "../ActionServerListitem";
 import img from "../../Icons/server.svg";
+import create from "../../Icons/create.svg";
+import search from "../../Icons/search.svg";
 import img2 from "../../Icons/img.png";
 import lol from "../../Icons/lol.png";
-import { Link } from "react-router-dom";
+import { selectid } from "../../Features/authSlice";
+import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
+import axios from "axios";
 const Container = styled.div`
   width: 72px;
   background-color: #202225;
@@ -15,12 +21,33 @@ const Container = styled.div`
   justify-content: flex-start;
 `;
 function Listbar() {
+  const [servers, setservers] = useState([]);
+  const user_id = useSelector(selectid);
+  useEffect(async () => {
+    const result = await axios(
+      "http://localhost:3003/server/user-servers/" + user_id
+    );
+    setservers(result.data.data);
+  }, []);
   return (
     <Container>
-      <ListItem id="1" servername={"server1"} img={img}></ListItem>
-      <ListItem id="2" servername={"server2"} img={img2}></ListItem>
-      <ListItem id="3" servername={"server3"} img={img}></ListItem>
-      <ListItem id="4" servername={"server4"} img={lol}></ListItem>
+      {servers.map((server, i) => (
+        <ListItem
+          key={server[0]}
+          id={server[0]}
+          servername={server[1]}
+          img={`http://localhost:3003/uploads/servers/${server[2]}`}
+        ></ListItem>
+      ))}
+
+      <ActionServerListitem
+        actionname="Create"
+        img={create}
+      ></ActionServerListitem>
+      <ActionServerListitem
+        actionname="Join"
+        img={search}
+      ></ActionServerListitem>
     </Container>
   );
 }

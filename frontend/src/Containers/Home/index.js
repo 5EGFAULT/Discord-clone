@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import Listbar from "../../components/Listbar";
+import { selectisAuthenticated } from "../../Features/authSlice";
+import { useSelector } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
@@ -12,12 +15,18 @@ const Body = styled.div`
   background-color: #37393f;
 `;
 function Home() {
-  return (
-    <Container>
-      <Listbar></Listbar>
-      <Body></Body>
-    </Container>
-  );
+  const isAuthenticated = useSelector(selectisAuthenticated);
+
+  if (!isAuthenticated) {
+    return <Redirect to="/login" />;
+  } else {
+    return (
+      <Container>
+        <Listbar></Listbar>
+        <Body></Body>
+      </Container>
+    );
+  }
 }
 
 export default Home;

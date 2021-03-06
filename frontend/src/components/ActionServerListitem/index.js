@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { changeserver_id } from "../../Features/serverSlice";
-import { useSelector, useDispatch } from "react-redux";
-// import { import serverimg from "../../../../Icons/server.svg";
+// import serverimg from "../../../../Icons/server.svg";
 const Container = styled.div`
   position: relative;
   width: 72px;
@@ -36,7 +34,6 @@ const Tooltip = styled.div`
   border-radius: 4px;
   position: absolute;
   left: 80px;
-  z-index: 100;
   min-height: 48px;
   min-width: 150px;
   padding: 8px;
@@ -55,11 +52,10 @@ const Tooltip = styled.div`
     transform: rotate(45deg);
   }
 `;
-function ListItem({ img, servername, id }) {
+function ActionServerListitem({ actionname, img }) {
   const [isshowed, setisshowed] = useState(false);
-  const dispatch = useDispatch();
   return (
-    <Link onClick={() => dispatch(changeserver_id(id))} to={"/server/" + id}>
+    <Link to={"/" + actionname}>
       <Container>
         <Avatar
           onMouseEnter={(e) => setisshowed(true)}
@@ -67,9 +63,9 @@ function ListItem({ img, servername, id }) {
         >
           <img src={img} />
         </Avatar>
-        <Tooltip isshowed={isshowed}>{servername}</Tooltip>
+        <Tooltip isshowed={isshowed}>{actionname} Server</Tooltip>
       </Container>
     </Link>
   );
 }
-export default ListItem;
+export default ActionServerListitem;

@@ -1,9 +1,7 @@
 import styled from "styled-components";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
-import * as yup from "yup";
-// import passwordyup from "yup-password";
-// passwordyup(yup);
-// console.log(passwordyup);
+import { Loginschema as schema } from "../../yup shema";
 import {
   AuthForm,
   Headline,
@@ -17,15 +15,21 @@ import background from "../../Icons/Background.jpg";
 import {
   changeEmail,
   changePassword,
+  setisAuthenticated,
+  selectisAuthenticated,
   selectEmail,
   selectPassword,
-} from "../../Features/loginSlice";
+  setUserpic,
+  setid,
+} from "../../Features/authSlice";
 import { useSelector, useDispatch } from "react-redux";
-
+// import { dispatch } from "react-redux";
+import store from "../../store";
 const Background = styled.div`
   width: 100vw;
   height: 100vh;
   background-image: url("${background}");
+  overflow-y: scroll;
 `;
 const BodyContainer = styled.div`
   width: 100vw;
@@ -68,65 +72,64 @@ function Login() {
   const dispatch = useDispatch();
   const email = useSelector(selectEmail);
   const password = useSelector(selectPassword);
-  return (
-    <Background>
-      <BodyContainer>
-        <AuthForm width="720px" height="344px">
-          <LoginForm>
-            <Headline>Welcome back!</Headline>
-            <SubHeadline>We're so excited to see you again!</SubHeadline>
-            <Container>
-              <AuthTextFeild
-                marginBottom="20px"
-                type="text"
-                // type="email"
-                changehandler={(value) => dispatch(changeEmail(value))}
-              >
-                Email
-                {/* or Phone Number */}
-              </AuthTextFeild>
-              <AuthTextFeild
-                type="password"
-                changehandler={(value) => dispatch(changePassword(value))}
-              >
-                Password
-              </AuthTextFeild>
-              <Link to="/reset-password">{/* Forgot your password? */}</Link>
-              <Button
-                marginbottom="8px"
-                onClick={() => LoginAPI(email, password)}
-              >
-                Login
-              </Button>
-              <InfoSpan>
-                Need an account? <Link to="/register"> Register</Link>
-              </InfoSpan>
-            </Container>
-          </LoginForm>
-          <Separateur />
-          <QrDiv></QrDiv>
-        </AuthForm>
-      </BodyContainer>
-    </Background>
-  );
+  const isAuthenticated = useSelector(selectisAuthenticated);
+
+  if (isAuthenticated) {
+    return <Redirect to="/" />;
+  } else {
+    console.log(isAuthenticated);
+
+    return (
+      <Background>
+        <BodyContainer>
+          <AuthForm width="720px" height="344px">
+            <LoginForm>
+              <Headline>Welcome back!</Headline>
+              <SubHeadline>We're so excited to see you again!</SubHeadline>
+              <Container>
+                <AuthTextFeild
+                  marginBottom="20px"
+                  type="text"
+                  // type="email"
+                  changehandler={(value) => dispatch(changeEmail(value))}
+                >
+                  Email
+                  {/* or Phone Number */}
+                </AuthTextFeild>
+                <AuthTextFeild
+                  type="password"
+                  changehandler={(value) => dispatch(changePassword(value))}
+                >
+                  Password
+                </AuthTextFeild>
+                <Link to="/reset-password">{/* Forgot your password? */}</Link>
+                <Button
+                  marginbottom="8px"
+                  onClick={() => LoginAPI(email, password)}
+                >
+                  Login
+                </Button>
+                <InfoSpan>
+                  Need an account? <Link to="/register"> Register</Link>
+                </InfoSpan>
+              </Container>
+            </LoginForm>
+            <Separateur />
+            <QrDiv></QrDiv>
+          </AuthForm>
+        </BodyContainer>
+      </Background>
+    );
+  }
 }
-let schema = yup.object().shape({
-  email: yup.string().email().required("No email provided."),
-  password: yup
-    .string()
-    .required("No password provided.")
-    .matches(
-      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&_-])[A-Za-z\d@$!%*#?&_-]{8,}$/,
-      "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
-    ),
-});
 async function LoginAPI(email, password) {
+  // TODO Errors showing under inputs in form register
   try {
     const res = await schema.validate(
       { email: email, password: password },
       { abortEarly: false }
     );
-    console.log(res);
+    // console.log(res);
     let data = JSON.stringify({
       email: email,
       password: password,
@@ -141,7 +144,17 @@ async function LoginAPI(email, password) {
     };
     axios(config)
       .then(function (response) {
-        console.log(JSON.stringify(response.data));
+        let result = response.data;
+        console.log(result);
+
+        if (result.err === null) {
+          store.dispatch(setid(result.data[0]));
+          store.dispatch(setisAuthenticated(true));
+          store.dispatch(changePassword("")); //just to clear it from memery
+          store.dispatch(setUserpic(result.data[result.data.length - 1]));
+        } else {
+          //! todo if err from backend
+        }
       })
       .catch(function (error) {
         console.log(error);

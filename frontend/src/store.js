@@ -1,10 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import registerReducer from "./Features/registerSlice";
-import loginReducer from "./Features/loginSlice";
+import authReducer from "./Features/authSlice";
+import serverReducer from "./Features/serverSlice";
+import thunk from "redux-thunk";
+import { logger } from "redux-logger";
 
 export default configureStore({
   reducer: {
-    register: registerReducer,
-    login: loginReducer,
+    auth: authReducer,
+    server: serverReducer,
   },
+  middleware: [logger, thunk],
 });
