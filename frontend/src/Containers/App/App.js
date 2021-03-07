@@ -7,6 +7,7 @@ import ChannelRoom from "../ChannelRoom";
 import JoinServer from "../JoinServer";
 import ServerListPage from "../ServerListPage";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import EditUser from "../EditUser";
 function App() {
   return (
     <Router>
@@ -17,6 +18,7 @@ function App() {
       {/* chanell list without chat lisr*/}
       <Route exact path="/Create" component={CreateServer} />
       <Route exact path="/Join" component={JoinServer} />
+      <Route exact path="/edit" component={EditUser} />
       <Route exact path="/" component={Home} />
       {/* server list without chat lisr*/}
       {/* <Route path="/" component={Home} /> */}

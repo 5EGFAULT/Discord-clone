@@ -44,16 +44,16 @@ const MessageBody = styled.div`
   padding: 8px;
   /* background-color: red; */
 `;
-function Message({ children, avatar }) {
+function Message({ children, avatar, user }) {
   return (
     <Container>
       <Avatar>
         <img src={avatar} />
       </Avatar>
       <LeftContainer>
-        <Username>user</Username>
+        <Username>{user}</Username>
         <MessageBody>{children}</MessageBody>
-      </LeftContainer>{" "}
+      </LeftContainer>
     </Container>
   );
 }

@@ -19,6 +19,8 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  overflow-y: auto;
+  overflow-x: hidden;
 `;
 function Listbar() {
   const [servers, setservers] = useState([]);
@@ -33,7 +35,7 @@ function Listbar() {
     <Container>
       {servers.map((server, i) => (
         <ListItem
-          key={server[0]}
+          key={i}
           id={server[0]}
           servername={server[1]}
           img={`http://localhost:3003/uploads/servers/${server[2]}`}

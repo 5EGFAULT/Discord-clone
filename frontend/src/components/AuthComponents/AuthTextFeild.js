@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { useRef, useEffect } from "react";
 const Label = styled.div`
   text-transform: uppercase;
   text-align: left;
@@ -38,10 +38,16 @@ const InputWrap = styled.div`
   }
 `;
 function AuthTextFeild(props) {
+  const input = useRef(null);
   const style = props.width
     ? { marginBottom: props.marginBottom, width: props.width }
     : { marginBottom: props.marginBottom };
 
+  useEffect(() => {
+    if (input && props.placeholder) {
+      input.current.value = props.placeholder;
+    }
+  }, [input]);
   return (
     <div style={style}>
       <Label style={{ color: props.width ? "white" : "#8e9297" }}>
@@ -49,6 +55,8 @@ function AuthTextFeild(props) {
       </Label>
       <InputWrap>
         <Input
+          ref={input}
+          // value={props.placeholder != null ? props.placeholder : ""}
           style={{ color: props.width ? "white" : "#8e9297" }}
           onChange={(e) => props.changehandler(e.target.value)}
           type={props.type}

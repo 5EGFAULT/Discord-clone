@@ -21,10 +21,13 @@ const Container = styled.div`
     }
   }
 `;
-function ChatTextFeild() {
+function ChatTextFeild({ submitMessageName }) {
   return (
     <Container>
-      <input placeholder="Message" />
+      <input
+        onKeyDownCapture={(e) => submitMessageName(e)}
+        placeholder="Message"
+      />
     </Container>
   );
 }

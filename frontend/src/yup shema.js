@@ -22,7 +22,7 @@ export const Registerschema = yup.object().shape({
     .required("No password provided.")
     .matches(
       /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&_-])[A-Za-z\d@$!%*#?&_-]{8,}$/,
-      "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
+      "Password Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
     ),
   username: yup.string().required("No usernam provided."),
   birth_date: yup.object().datevalidate("Date is not valid."),
@@ -34,7 +34,7 @@ export const Loginschema = yup.object().shape({
     .required("No password provided.")
     .matches(
       /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&_-])[A-Za-z\d@$!%*#?&_-]{8,}$/,
-      "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
+      "Password Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
     ),
 });
 export const nameschema = yup.object().shape({

@@ -4,8 +4,10 @@ import ServerCard from "../../components/SeverCard";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import store from "../../store";
-import { selectisAuthenticated } from "../../Features/authSlice";
+import { selectid, selectisAuthenticated } from "../../Features/authSlice";
+import { changeserver_id } from "../../Features/serverSlice";
 import { useSelector } from "react-redux";
+
 import { Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
@@ -19,6 +21,14 @@ const Body = styled.div`
   flex: 1;
   background-color: #37393f;
   overflow-y: auto;
+  & .Messagenull {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
 `;
 const Searchbar = styled.div`
   height: 100px;
@@ -55,10 +65,13 @@ const CardList = styled.div`
 let Servers_list;
 function JoinServer() {
   const [servers, setservers] = useState([]);
+  const user_id = useSelector(selectid);
   let history = useHistory();
 
   useEffect(async () => {
-    const result = await axios("http://localhost:3003/server/getall");
+    const result = await axios(
+      "http://localhost:3003/server/getall/" + user_id
+    );
     Servers_list = result.data.data;
     setservers(result.data.data);
   }, []);
@@ -80,20 +93,29 @@ function JoinServer() {
       <Container>
         <Listbar></Listbar>
         <Body>
-          <Searchbar>
-            <input onChange={searchfeild} placeholder="Search server name" />
-          </Searchbar>
-          <CardList>
-            {servers.map((server) => (
-              <ServerCard
-                key={server[0]}
-                img={server[2]}
-                servername={server[1]}
-                serverid={server[0]}
-                JoinServer={() => JoinserverApi(server[0], history)}
-              ></ServerCard>
-            ))}
-          </CardList>
+          {servers.length == 0 ? (
+            <div className="Messagenull">No Servers Available</div>
+          ) : (
+            <>
+              <Searchbar>
+                <input
+                  onChange={searchfeild}
+                  placeholder="Search server name"
+                />
+              </Searchbar>
+              <CardList>
+                {servers.map((server) => (
+                  <ServerCard
+                    key={server[0]}
+                    img={server[2]}
+                    servername={server[1]}
+                    serverid={server[0]}
+                    JoinServer={() => JoinserverApi(server[0], history)}
+                  ></ServerCard>
+                ))}
+              </CardList>
+            </>
+          )}
         </Body>
       </Container>
     );
@@ -118,6 +140,7 @@ function JoinserverApi(serverid, history) {
       console.log(result);
       if (result.err === null) {
         console.log(result);
+        store.dispatch(changeserver_id(serverid));
         history.push("/server/" + serverid);
         //? redirect to the server
       } else {

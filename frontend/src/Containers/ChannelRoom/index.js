@@ -22,7 +22,7 @@ function ChannelRoom() {
     return (
       <Container>
         <Listbar></Listbar>
-        <Sidebar server_name="Server Title"></Sidebar>
+        <Sidebar></Sidebar>
         <Chat></Chat>
       </Container>
     );

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { changeserver_id } from "../../Features/serverSlice";
 import { useSelector, useDispatch } from "react-redux";
+
 // import { import serverimg from "../../../../Icons/server.svg";
 const Container = styled.div`
   position: relative;
@@ -24,8 +25,10 @@ const Avatar = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  overflow: hidden;
   & img {
-    max-width: 48px;
+    /* max-width: 48px;
+    max-height: 48px; */
     max-height: 48px;
     border-radius: 16px;
   }

@@ -21,10 +21,14 @@ import {
   selectPassword,
   setUserpic,
   setid,
+  selectUsername,
+  changeUsername,
 } from "../../Features/authSlice";
 import { useSelector, useDispatch } from "react-redux";
 // import { dispatch } from "react-redux";
 import store from "../../store";
+import Error from "../../components/Errors";
+import { selectErrors, setErrors } from "../../Features/errorsSlice";
 const Background = styled.div`
   width: 100vw;
   height: 100vh;
@@ -73,7 +77,7 @@ function Login() {
   const email = useSelector(selectEmail);
   const password = useSelector(selectPassword);
   const isAuthenticated = useSelector(selectisAuthenticated);
-
+  const errors = useSelector(selectErrors);
   if (isAuthenticated) {
     return <Redirect to="/" />;
   } else {
@@ -115,7 +119,11 @@ function Login() {
               </Container>
             </LoginForm>
             <Separateur />
-            <QrDiv></QrDiv>
+            <QrDiv>
+              {errors == null
+                ? ""
+                : errors.map((error, i) => <Error key={i}>{error.msg}</Error>)}
+            </QrDiv>
           </AuthForm>
         </BodyContainer>
       </Background>
@@ -149,11 +157,16 @@ async function LoginAPI(email, password) {
 
         if (result.err === null) {
           store.dispatch(setid(result.data[0]));
+          store.dispatch(changeUsername(result.data[1]));
+          store.dispatch(changeEmail(result.data[2]));
           store.dispatch(setisAuthenticated(true));
           store.dispatch(changePassword("")); //just to clear it from memery
           store.dispatch(setUserpic(result.data[result.data.length - 1]));
         } else {
           //! todo if err from backend
+          let errors = [];
+          errors.push({ msg: result.err });
+          store.dispatch(setErrors(errors));
         }
       })
       .catch(function (error) {
@@ -167,6 +180,7 @@ async function LoginAPI(email, password) {
         msg: e.message,
       })
     );
+    store.dispatch(setErrors(errors));
     console.log(errors);
   }
 }

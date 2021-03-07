@@ -31,7 +31,8 @@ import {
 } from "../../Features/authSlice";
 import axios from "axios";
 import background from "../../Icons/Background.jpg";
-
+import Error from "../../components/Errors";
+import { selectErrors, setErrors } from "../../Features/errorsSlice";
 const RegisterForm = styled.div`
   height: 100%;
   width: 416px;
@@ -72,6 +73,8 @@ function Register() {
   const month = useSelector(selectMonth);
   const year = useSelector(selectYear);
   const isAuthenticated = useSelector(selectisAuthenticated);
+  const errors = useSelector(selectErrors);
+
   if (isAuthenticated) {
     return <Redirect to="/" />;
   } else {
@@ -122,6 +125,11 @@ function Register() {
                 <Link to="/login">Already have an account?</Link>
               </Container>
             </RegisterForm>
+            <div>
+              {errors == null
+                ? ""
+                : errors.map((error, i) => <Error key={i}>{error.msg}</Error>)}
+            </div>
           </AuthForm>
         </BodyContainer>
       </Background>
@@ -168,7 +176,9 @@ async function RegisterAPI(email, username, password, day, month, year) {
           store.dispatch(setid(result.data[0]));
         } else {
           //! todo if err from backend
-          alert(result.err);
+          let errors = [];
+          errors.push({ msg: result.err });
+          store.dispatch(setErrors(errors));
         }
       })
       .catch(function (error) {
@@ -185,6 +195,7 @@ async function RegisterAPI(email, username, password, day, month, year) {
         e: e,
       })
     );
+    store.dispatch(setErrors(errors));
     console.log(errors);
   }
 }

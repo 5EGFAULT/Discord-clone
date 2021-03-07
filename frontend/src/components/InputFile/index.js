@@ -13,11 +13,11 @@ const Span = styled.div`
   display: flex;
   align-items: center;
 `;
-function InputFile({ changehandler }) {
+function InputFile({ changehandler, name }) {
   return (
     <label style={{ width: "90%", marginBottom: "20px" }}>
       <Span>
-        <img src={upload} style={{ marginRight: "8px" }} /> Server image
+        <img src={upload} style={{ marginRight: "8px" }} /> {name}
       </Span>
 
       <Input

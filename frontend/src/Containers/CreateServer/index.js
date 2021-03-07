@@ -13,8 +13,12 @@ import { nameschema as schema } from "../../yup shema";
 import { Button, Headline } from "../../components/AuthComponents";
 import store from "../../store";
 import { selectisAuthenticated } from "../../Features/authSlice";
+import { changeserver_id } from "../../Features/serverSlice";
 import { useSelector } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
+import { setErrors, selectErrors } from "../../Features/errorsSlice";
+import Error from "../../components/Errors";
+
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -57,6 +61,8 @@ function CreateServer() {
     setfile(event.target.files[0]);
   };
   const isAuthenticated = useSelector(selectisAuthenticated);
+  const errors = useSelector(selectErrors);
+
   let history = useHistory();
   if (!isAuthenticated) {
     return <Redirect to="/login" />;
@@ -124,12 +130,17 @@ function CreateServer() {
                 />
               </RadioGroup>
             </FormControl>
-            <InputFile changehandler={handlefileChange} />
+            <InputFile name="Server image" changehandler={handlefileChange} />
             <Button
               onClick={() => CreateServerApi(file, servername, value, history)}
             >
               Create
             </Button>
+            <div>
+              {errors == null
+                ? ""
+                : errors.map((error, i) => <Error key={i}>{error.msg}</Error>)}
+            </div>
           </Form>
         </Body>
       </Container>
@@ -159,9 +170,14 @@ async function CreateServerApi(image, servername, visablity, history) {
         console.log(result);
 
         if (result.err === null) {
+          store.dispatch(changeserver_id(result.data.id));
+          store.dispatch(setErrors(null));
           history.push("/server/" + result.data.id);
         } else {
           //! todo if err from backend
+          let errors = [];
+          errors.push({ msg: result.err });
+          store.dispatch(setErrors(errors));
         }
       })
       .catch(function (error) {
@@ -175,7 +191,11 @@ async function CreateServerApi(image, servername, visablity, history) {
         msg: e.message,
       })
     );
-    console.log(errors);
+    if (errors.length == 0) {
+      errors.push({ msg: err.message });
+      store.dispatch(setErrors(errors));
+    }
+    console.log([{ msg: err.message }]);
   }
 
   // var formData = new FormData();
