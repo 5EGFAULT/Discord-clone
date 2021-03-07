@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="3108" viewBox="0 0 1600 3108">
+  <defs>
+    <filter id="BG" x="206" y="93" width="1188" height="1418" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.039"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path">
+      <rect width="1130" height="620" fill="none"/>
+    </clipPath>
+    <filter id="BG-2" x="206" y="1523" width="588" height="448" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.039"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path-3">
+      <rect width="532" height="370" fill="none"/>
+    </clipPath>
+    <filter id="BG-3" x="806" y="1523" width="588" height="448" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.039"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-Components-8">
+      <rect width="1600" height="3108"/>
+    </clipPath>
+  </defs>
+  <g id="Components-8" clip-path="url(#clip-Components-8)">
+    <rect width="1600" height="3108" fill="#f0f0f7"/>
+    <g id="Video_Player" data-name="Video Player" transform="translate(-55 -63)">
+      <g transform="matrix(1, 0, 0, 1, 55, 63)" filter="url(#BG)">
+        <rect id="BG-4" data-name="BG" width="1170" height="1400" transform="translate(215 100)" fill="#fff"/>
+      </g>
+      <text id="Video_Player-2" data-name="Video Player" transform="translate(290 201)" fill="#4d4f5c" font-size="18" font-family="SourceSansPro-Regular, Source Sans Pro"><tspan x="0" y="0">Video Player</tspan></text>
+      <g id="Video" transform="translate(290 239)" clip-path="url(#clip-path)">
+        <rect id="Rectangle_742" data-name="Rectangle 742" width="1130" height="620" fill="#43425d"/>
+        <g id="player_tab" transform="translate(-290 -239)">
+          <rect id="Rectangle_743" data-name="Rectangle 743" width="1130" height="60" transform="translate(290 799)" fill="#43425d"/>
+          <g id="sound" transform="translate(-3 63.228)">
+            <rect id="Rectangle_744" data-name="Rectangle 744" width="3" height="25" rx="1.5" transform="translate(1199 754.772)" fill="#fff"/>
+            <rect id="Rectangle_745" data-name="Rectangle 745" width="3" height="25" rx="1.5" transform="translate(1206 754.772)" fill="#fff"/>
+            <rect id="Rectangle_746" data-name="Rectangle 746" width="3" height="25" rx="1.5" transform="translate(1213 754.772)" fill="#fff"/>
+            <rect id="Rectangle_747" data-name="Rectangle 747" width="3" height="25" rx="1.5" transform="translate(1219 754.772)" fill="#fff"/>
+            <rect id="Rectangle_748" data-name="Rectangle 748" width="3" height="25" rx="1.5" transform="translate(1226 754.772)" fill="#fff"/>
+            <rect id="Rectangle_749" data-name="Rectangle 749" width="3" height="25" rx="1.5" transform="translate(1233 754.772)" fill="#fff"/>
+            <rect id="Rectangle_750" data-name="Rectangle 750" width="3" height="25" rx="1.5" transform="translate(1240 754.772)" fill="#fff" opacity="0.201"/>
+            <rect id="Rectangle_751" data-name="Rectangle 751" width="3" height="25" rx="1.5" transform="translate(1246 754.772)" fill="#fff" opacity="0.201"/>
+            <rect id="Rectangle_752" data-name="Rectangle 752" width="3" height="25" rx="1.5" transform="translate(1253 754.772)" fill="#fff" opacity="0.201"/>
+            <rect id="Rectangle_753" data-name="Rectangle 753" width="3" height="25" rx="1.5" transform="translate(1260 754.772)" fill="#fff" opacity="0.201"/>
+          </g>
+          <path id="Path_337" data-name="Path 337" d="M1995.221,6965.2h1129.7" transform="translate(-1705 -6166)" fill="none" stroke="#fff" stroke-width="1" opacity="0.176"/>
+          <g id="fullscreen" transform="translate(65)">
+            <path id="Path_338" data-name="Path 338" d="M1278,823.934v-6.989h6.7" transform="translate(482.912 2119.79) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+            <path id="Path_341" data-name="Path 341" d="M1278,823.934v-6.989h6.7" transform="translate(2136.79 -458.056) rotate(90)" fill="none" stroke="#fff" stroke-width="2"/>
+            <path id="Path_339" data-name="Path 339" d="M1278,823.934v-6.989h6.7" transform="translate(22 3)" fill="none" stroke="#fff" stroke-width="2"/>
+            <path id="Path_340" data-name="Path 340" d="M1278,823.934v-6.989h6.7" transform="translate(2597.702 1658.734) rotate(180)" fill="none" stroke="#fff" stroke-width="2"/>
+          </g>
+          <text id="HD" transform="translate(1312 839)" fill="#fff" font-size="25" font-family="SourceSansPro-Bold, Source Sans Pro" font-weight="700"><tspan x="-16.413" y="0">HD</tspan></text>
+          <g id="timer" transform="translate(55 63)">
+            <rect id="Rectangle_744-2" data-name="Rectangle 744" width="700" height="5" rx="2.5" transform="translate(365 767)" fill="#fff" opacity="0.2"/>
+            <rect id="Rectangle_745-2" data-name="Rectangle 745" width="244" height="5" rx="2.5" transform="translate(365 767)" fill="#fff"/>
+            <text id="_3:45" data-name="3:45" transform="translate(1098 774)" fill="#fff" font-size="13" font-family="SourceSansPro-Regular, Source Sans Pro"><tspan x="-11.317" y="0">3:45</tspan></text>
+            <text id="_0:00" data-name="0:00" transform="translate(332 774)" fill="#fff" font-size="13" font-family="SourceSansPro-Regular, Source Sans Pro"><tspan x="-11.317" y="0">0:00</tspan></text>
+          </g>
+          <path id="play" d="M0,3.563,23.271,0,18.978,22.541Z" transform="translate(325.583 816.117) rotate(45)" fill="#fff"/>
+        </g>
+        <g id="btn_play" transform="translate(-290 -239)">
+          <circle id="Ellipse_39" data-name="Ellipse 39" cx="58.5" cy="58.5" r="58.5" transform="translate(797 475)" fill="#fff" opacity="0.209"/>
+          <path id="Path_337-2" data-name="Path 337" d="M0,7.428,48.515,0l-8.95,46.992Z" transform="translate(848.282 499.266) rotate(45)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Video-2" data-name="Video" transform="translate(290 889)" clip-path="url(#clip-path)">
+        <rect id="Rectangle_742-2" data-name="Rectangle 742" width="1130" height="620" fill="#43425d"/>
+        <g id="player_tab-2" data-name="player_tab" transform="translate(-290 -239)">
+          <rect id="Rectangle_743-2" data-name="Rectangle 743" width="1130" height="60" transform="translate(290 799)" fill="#43425d"/>
+          <g id="Timer-2" data-name="Timer">
+            <path id="Path_337-3" data-name="Path 337" d="M1995.221,6965.2h1129.7" transform="translate(-1705 -6166)" fill="none" stroke="#fff" stroke-width="5" opacity="0.2"/>
+            <path id="Path_342" data-name="Path 342" d="M1995.221,6965.2h285.846" transform="translate(-1705 -6166)" fill="none" stroke="#ff6565" stroke-width="5"/>
+          </g>
+          <g id="fullscreen-2" data-name="fullscreen" transform="translate(65 -1.944)">
+            <path id="Path_338-2" data-name="Path 338" d="M1278,823.934v-6.989h6.7" transform="translate(482.912 2119.79) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+            <path id="Path_341-2" data-name="Path 341" d="M1278,823.934v-6.989h6.7" transform="translate(2136.79 -458.056) rotate(90)" fill="none" stroke="#fff" stroke-width="2"/>
+            <path id="Path_339-2" data-name="Path 339" d="M1278,823.934v-6.989h6.7" transform="translate(22 3)" fill="none" stroke="#fff" stroke-width="2"/>
+            <path id="Path_340-2" data-name="Path 340" d="M1278,823.934v-6.989h6.7" transform="translate(2597.702 1658.734) rotate(180)" fill="none" stroke="#fff" stroke-width="2"/>
+          </g>
+          <text id="HD-2" data-name="HD" transform="translate(1312 838)" fill="#fff" font-size="25" font-family="SourceSansPro-Bold, Source Sans Pro" font-weight="700"><tspan x="-16.413" y="0">HD</tspan></text>
+          <path id="play-2" data-name="play" d="M0,3.563,23.271,0,18.978,22.541Z" transform="translate(325.583 813) rotate(45)" fill="#fff"/>
+          <g id="sound-2" data-name="sound">
+            <path id="Path_343" data-name="Path 343" d="M3,5.1a2.946,2.946,0,0,0-3,3v6a2.946,2.946,0,0,0,3,3H5.6L12,22.2V0L5.6,5.1Zm17,6a8.275,8.275,0,0,0-2.3-5.7.99.99,0,0,0-1.4,1.4,6.288,6.288,0,0,1,0,8.6.967.967,0,0,0,0,1.4.967.967,0,0,0,1.4,0A8.275,8.275,0,0,0,20,11.1ZM18.6.3a1.075,1.075,0,0,0-1.4.2,1.075,1.075,0,0,0,.2,1.4,11.5,11.5,0,0,1,0,18.4,1.075,1.075,0,0,0-.2,1.4.909.909,0,0,0,.8.4,1.421,1.421,0,0,0,.6-.2A13.5,13.5,0,0,0,18.6.3Z" transform="translate(1145 818)" fill="#fff"/>
+            <path id="Path_344" data-name="Path 344" d="M1178.311,830h89.126" fill="none" stroke="#fff" stroke-width="5" opacity="0.2"/>
+            <path id="Path_345" data-name="Path 345" d="M1178.311,830.9h47.35" transform="translate(0 -0.9)" fill="none" stroke="#fff" stroke-width="5"/>
+            <circle id="Ellipse_39-2" data-name="Ellipse 39" cx="7.5" cy="7.5" r="7.5" transform="translate(1222 823)" fill="#fff"/>
+          </g>
+          <g id="next" transform="translate(1.864 -5.258)">
+            <path id="play-3" data-name="play" d="M0,2.384,15.569,0,12.7,15.08Z" transform="translate(380.449 823.258) rotate(45)" fill="#fff" opacity="0.18"/>
+            <path id="Path_346" data-name="Path 346" d="M393.521,823.258v18.835" transform="translate(1.272 1.196)" fill="none" stroke="#fff" stroke-width="3" opacity="0.2"/>
+          </g>
+          <text id="_0:00_3:45" data-name="0:00 / 3:45" transform="translate(470 835)" fill="#fff" font-size="18" font-family="SourceSansPro-Regular, Source Sans Pro"><tspan x="-38.088" y="0">0:00 / 3:45</tspan></text>
+        </g>
+        <g id="btn_play-2" data-name="btn_play" transform="translate(-296.259 -227.259)">
+          <path id="Path_337-4" data-name="Path 337" d="M0,10.228,66.8,0,54.48,64.708Z" transform="translate(836.338 474.795) rotate(45)" fill="#fff" opacity="0.5"/>
+        </g>
+      </g>
+    </g>
+    <g id="Video_Player-3" data-name="Video Player">
+      <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#BG-2)">
+        <rect id="BG-5" data-name="BG" width="570" height="430" transform="translate(215 1530)" fill="#fff"/>
+      </g>
+      <g id="Video-3" data-name="Video" transform="translate(234 1560)" clip-path="url(#clip-path-3)">
+        <rect id="Rectangle_744-3" data-name="Rectangle 744" width="532" height="370" fill="#43425d"/>
+        <g id="player_tab-3" data-name="player_tab" transform="translate(-234 -1560)">
+          <rect id="Rectangle_745-3" data-name="Rectangle 745" width="532" height="60" transform="translate(234 1870)" fill="#43425d" opacity="0.2"/>
+          <path id="play-4" data-name="play" d="M0,3.563,23.271,0,18.978,22.541Z" transform="translate(265.583 1884) rotate(45)" fill="#fff"/>
+          <g id="timer-3" data-name="timer">
+            <path id="Path_342-2" data-name="Path 342" d="M1994,8104h531.97" transform="translate(-1760 -6234)" fill="none" stroke="#fff" stroke-width="5" opacity="0.2"/>
+            <path id="Path_343-2" data-name="Path 343" d="M1994,8104h168.933" transform="translate(-1760 -6234)" fill="none" stroke="#3b86ff" stroke-width="5"/>
+          </g>
+          <text id="_0:00_3:45-2" data-name="0:00 / 3:45" transform="translate(373 1906)" fill="#fff" font-size="18" font-family="SourceSansPro-Regular, Source Sans Pro"><tspan x="-38.088" y="0">0:00 / 3:45</tspan></text>
+          <path id="sound-3" data-name="sound" d="M3,5.1a2.946,2.946,0,0,0-3,3v6a2.946,2.946,0,0,0,3,3H5.6L12,22.2V0L5.6,5.1Zm17,6a8.275,8.275,0,0,0-2.3-5.7.99.99,0,0,0-1.4,1.4,6.288,6.288,0,0,1,0,8.6.967.967,0,0,0,0,1.4.967.967,0,0,0,1.4,0A8.275,8.275,0,0,0,20,11.1ZM18.6.3a1.075,1.075,0,0,0-1.4.2,1.075,1.075,0,0,0,.2,1.4,11.5,11.5,0,0,1,0,18.4,1.075,1.075,0,0,0-.2,1.4.909.909,0,0,0,.8.4,1.421,1.421,0,0,0,.6-.2A13.5,13.5,0,0,0,18.6.3Z" transform="translate(649 1889)" fill="#fff"/>
+          <g id="fullscreen-3" data-name="fullscreen" transform="translate(-590 1069.056)">
+            <path id="Path_338-3" data-name="Path 338" d="M1278,823.934v-6.989h6.7" transform="translate(482.912 2119.79) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+            <path id="Path_341-3" data-name="Path 341" d="M1278,823.934v-6.989h6.7" transform="translate(2136.79 -458.056) rotate(90)" fill="none" stroke="#fff" stroke-width="2"/>
+            <path id="Path_339-3" data-name="Path 339" d="M1278,823.934v-6.989h6.7" transform="translate(22 3)" fill="none" stroke="#fff" stroke-width="2"/>
+            <path id="Path_340-3" data-name="Path 340" d="M1278,823.934v-6.989h6.7" transform="translate(2597.702 1658.734) rotate(180)" fill="none" stroke="#fff" stroke-width="2"/>
+          </g>
+        </g>
+        <g id="btn_play-3" data-name="btn_play" transform="translate(-589 -360)">
+          <circle id="Ellipse_39-3" data-name="Ellipse 39" cx="58.5" cy="58.5" r="58.5" transform="translate(797 475)" fill="#fff" opacity="0.209"/>
+          <path id="Path_337-5" data-name="Path 337" d="M0,7.428,48.515,0l-8.95,46.992Z" transform="translate(848.282 499.266) rotate(45)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+    <g id="Video_Player-4" data-name="Video Player" transform="translate(600)">
+      <g transform="matrix(1, 0, 0, 1, -600, 0)" filter="url(#BG-3)">
+        <rect id="BG-6" data-name="BG" width="570" height="430" transform="translate(815 1530)" fill="#fff"/>
+      </g>
+      <g id="Video-4" data-name="Video" transform="translate(234 1560)" clip-path="url(#clip-path-3)">
+        <rect id="Rectangle_744-4" data-name="Rectangle 744" width="532" height="370" fill="#43425d"/>
+        <g id="player_tab-4" data-name="player_tab" transform="translate(-234 -1560)">
+          <rect id="Rectangle_745-4" data-name="Rectangle 745" width="532" height="60" transform="translate(234 1870)" fill="#43425d" opacity="0.2"/>
+          <g id="timer-4" data-name="timer">
+            <path id="Path_342-3" data-name="Path 342" d="M1994,8104h531.97" transform="translate(-1760 -6234)" fill="none" stroke="#fff" stroke-width="2" opacity="0.05"/>
+          </g>
+          <g id="fullscreen-4" data-name="fullscreen" transform="translate(-590 1069.056)">
+            <path id="Path_338-4" data-name="Path 338" d="M1278,823.934v-6.989h6.7" transform="translate(482.912 2119.79) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+            <path id="Path_341-4" data-name="Path 341" d="M1278,823.934v-6.989h6.7" transform="translate(2136.79 -458.056) rotate(90)" fill="none" stroke="#fff" stroke-width="2"/>
+            <path id="Path_339-4" data-name="Path 339" d="M1278,823.934v-6.989h6.7" transform="translate(22 3)" fill="none" stroke="#fff" stroke-width="2"/>
+            <path id="Path_340-4" data-name="Path 340" d="M1278,823.934v-6.989h6.7" transform="translate(2597.702 1658.734) rotate(180)" fill="none" stroke="#fff" stroke-width="2"/>
+          </g>
+          <g id="pause" transform="translate(4)">
+            <rect id="Rectangle_746-2" data-name="Rectangle 746" width="6" height="25" rx="2" transform="translate(252 1888)" fill="#fff"/>
+            <rect id="Rectangle_747-2" data-name="Rectangle 747" width="6" height="25" rx="2" transform="translate(264 1888)" fill="#fff"/>
+          </g>
+          <g id="sound-4" data-name="sound">
+            <rect id="Rectangle_746-3" data-name="Rectangle 746" width="40" height="116" rx="10" transform="translate(643 1753)" fill="#fff" opacity="0.3"/>
+            <path id="Path_343-3" data-name="Path 343" d="M1178.311,830h89.126" transform="translate(-166.5 3034.374) rotate(-90)" fill="none" stroke="#fff" stroke-width="5" opacity="0.2"/>
+            <path id="Path_344-2" data-name="Path 344" d="M1178.311,830.9h47.35" transform="translate(-167.4 3034.374) rotate(-90)" fill="none" stroke="#fff" stroke-width="5"/>
+            <circle id="Ellipse_39-4" data-name="Ellipse 39" cx="7.5" cy="7.5" r="7.5" transform="translate(656 1812.373) rotate(-90)" fill="#fff"/>
+            <path id="sound-5" data-name="sound" d="M3,5.1a2.946,2.946,0,0,0-3,3v6a2.946,2.946,0,0,0,3,3H5.6L12,22.2V0L5.6,5.1Zm17,6a8.275,8.275,0,0,0-2.3-5.7.99.99,0,0,0-1.4,1.4,6.288,6.288,0,0,1,0,8.6.967.967,0,0,0,0,1.4.967.967,0,0,0,1.4,0A8.275,8.275,0,0,0,20,11.1ZM18.6.3a1.075,1.075,0,0,0-1.4.2,1.075,1.075,0,0,0,.2,1.4,11.5,11.5,0,0,1,0,18.4,1.075,1.075,0,0,0-.2,1.4.909.909,0,0,0,.8.4,1.421,1.421,0,0,0,.6-.2A13.5,13.5,0,0,0,18.6.3Z" transform="translate(649 1889)" fill="#fff"/>
+          </g>
+          <g id="timer-5" data-name="timer">
+            <path id="Path_343-4" data-name="Path 343" d="M306.579,1900.5H619.209" fill="none" stroke="#fff" stroke-width="5" opacity="0.2"/>
+            <path id="Path_344-3" data-name="Path 344" d="M306.579,1901H435.42" transform="translate(0 -0.5)" fill="none" stroke="#fff" stroke-width="5"/>
+            <circle id="Ellipse_39-5" data-name="Ellipse 39" cx="7.5" cy="7.5" r="7.5" transform="translate(428 1908.374) rotate(-90)" fill="#fff"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
